@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block title %} Wszystkie Filmy {% endblock %}
+{% block content %}
+{% for title_movie in titles %}
+    <li>{{ title_movie.title }}</li>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %} Wszystkie Filmy {% endblock %}
+{% block content %}
+<h1>Tytuły i opinie</h1>
+{% for title_and_opinion in titles_and_opinions %}
+    <h2>Tytuł:</h2> {{ title_and_opinion.title }}<br>
+    <h2>Opinia:</h2> {{ title_and_opinion.opinion.opinion_text }}
+
+{% endfor %}
+{% endblock %}
