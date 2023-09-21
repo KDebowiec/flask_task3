@@ -21,12 +21,15 @@ def create_app():
 
     app.debug = True
 
-    from .main import add_movie_blueprint, delete_movie_blueprint, get_movies_blueprint, get_movies_with_opinions_blueprint, index_blueprint
+    from .main import add_movie_blueprint, delete_movie_blueprint, get_movies_blueprint, get_movies_with_opinions_blueprint, index_blueprint, get_opinions_blueprint
 
     app.register_blueprint(add_movie_blueprint)
     app.register_blueprint(delete_movie_blueprint)
     app.register_blueprint(get_movies_blueprint)
     app.register_blueprint(get_movies_with_opinions_blueprint)
     app.register_blueprint(index_blueprint)
+    app.register_blueprint(get_opinions_blueprint)
 
+    with app.app_context():
+        db.create_all()
     return app

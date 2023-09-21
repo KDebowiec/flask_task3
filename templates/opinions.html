@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %} Wszystkie Filmy {% endblock %}
+{% block content %}
+<h1>Tytuły</h1>
+{% for opinion in opinions %}
+    {{ opinion.content }} - {{ opinion.movie }}<hr>
+
+{% endfor %}
+{% endblock %}
